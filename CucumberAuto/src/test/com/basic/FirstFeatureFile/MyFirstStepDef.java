@@ -19,6 +19,7 @@ public class MyFirstStepDef {
 		System.setProperty("webdriver.chrome.driver", "E:\\CucumberSetup\\chromedriver_win32\\chromedriver.exe");	
 		driver = new ChromeDriver();
 		driver.get("https://www.facebook.com/");
+		System.out.println("opening URL");
 	}
 
 	@When("^User enters user first name$")

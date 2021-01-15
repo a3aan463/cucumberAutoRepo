@@ -5,7 +5,33 @@
 	<groupId>CucumberAuto</groupId>
 	<artifactId>CucumberAuto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<profiles>
+		<profile>
+			<id>integration-tests</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<configuration>
+							<parallel>none</parallel>
+							<threadCount>1</threadCount>
+							<disableXmlReport>true</disableXmlReport>
+						</configuration>
+						<executions>
+							<execution>
+								<id>Runnerclass</id>
+								<phase>integration-test</phase>
+								<goals>
+									<goal>integration-test</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -77,6 +103,7 @@
 			</plugin>
 
 		</plugins>
+
 
 	</build>
 

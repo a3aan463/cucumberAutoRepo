@@ -1,4 +1,4 @@
-Feature: Create account of Facebook2
+Feature: Create account of Facebook DataDriven
 As a user you need to open facebook homepage and do the validations
 
 Scenario Outline: Validate create user multiple fields21

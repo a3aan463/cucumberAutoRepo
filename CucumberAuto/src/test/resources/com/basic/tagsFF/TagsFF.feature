@@ -1,5 +1,5 @@
 @Important
-Feature: Create account of Facebook12
+Feature: Create account of Facebook tags
 As a user you need to open facebook homepage and do the validations
 
 @Smoke

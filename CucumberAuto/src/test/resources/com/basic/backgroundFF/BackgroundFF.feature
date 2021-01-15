@@ -1,4 +1,4 @@
-Feature: Create account of Facebook1
+Feature: Create account of Facebook Background
 As a user you need to open facebook homepage and do the validations
 
 Background: common login steps

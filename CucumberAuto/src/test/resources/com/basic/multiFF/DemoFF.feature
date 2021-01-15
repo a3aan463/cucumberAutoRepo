@@ -1,4 +1,4 @@
-Feature: Validate first and last name6
+Feature: Validate first and last name demo
 As a user you need to validate first and last name
 
 Scenario: Check first name and last name61

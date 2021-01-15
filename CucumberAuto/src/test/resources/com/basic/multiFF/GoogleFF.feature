@@ -1,4 +1,4 @@
-Feature: Validate search of google7
+Feature: Validate search of google
 As a user you need to validate search of google
 
 Scenario: Validate search field71

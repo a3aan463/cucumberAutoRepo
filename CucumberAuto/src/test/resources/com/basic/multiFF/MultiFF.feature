@@ -1,4 +1,4 @@
-Feature: Create account of Facebook8
+Feature: Create account of Facebook multi
 As a user you need to open facebook homepage and do the validations
 
 Scenario: Validate First Name field81

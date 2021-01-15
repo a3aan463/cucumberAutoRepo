@@ -1,4 +1,4 @@
-Feature: Create account of Facebook3
+Feature: Create account of Facebook datatable
 As a user you need to open facebook homepage and do the validations
 
 

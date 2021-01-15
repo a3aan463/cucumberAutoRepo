@@ -1,4 +1,4 @@
-Feature: Create account of Facebook10
+Feature: Create account of Facebook parameterization
 As a user you need to open facebook homepage and do the validations
 
 Scenario: Validate First Name field101

@@ -111,7 +111,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+							<outputDirectory>${project.build.directory}/target</outputDirectory>
 							<jsonFiles>
 								<jsonFile>**/*.json</jsonFile>
 							</jsonFiles>

@@ -59,38 +59,37 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
 				<version>2.22.0</version>
-<!-- 				<configuration> -->
-<!-- 					<outputDirectory>${basedir}/target/</outputDirectory> -->
-<!-- 				</configuration> -->
+				<!-- <configuration> -->
+				<!-- <outputDirectory>${basedir}/target/</outputDirectory> -->
+				<!-- </configuration> -->
 			</plugin>
 			<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>2.1</version>
-        <!-- <configuration>
-          <outputDirectory>${basedir}/target/</outputDirectory>
-        </configuration> -->
-      </plugin>
-			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M4</version>
-				<configuration>
-					<includes>
-						<include>**/CucumberRunner*.java</include>
-					</includes>
-					<testFailureIgnore>true</testFailureIgnore>
-				</configuration>
-			</plugin> -->
+				<artifactId>maven-site-plugin</artifactId>
+				<version>2.1</version>
+				<!-- <configuration> <outputDirectory>${basedir}/target/</outputDirectory> 
+					</configuration> -->
+			</plugin>
+
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
+				<version>3.0.0-M4</version> <configuration> <includes> <include>**/CucumberRunner*.java</include> 
+				</includes> <testFailureIgnore>true</testFailureIgnore> </configuration> 
+				</plugin> -->
 		</plugins>
 	</reporting>
-<!-- 	<properties>
-		<baseFolder>${basedir}</baseFolder>
-	</properties> -->
+	<!-- <properties> <baseFolder>${basedir}</baseFolder> </properties> -->
 	<build>
-<!-- 		<directory>${baseFolder}/target</directory> -->
+		<!-- <directory>${baseFolder}/target</directory> -->
 		<plugins>
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -99,6 +98,30 @@
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>5.3.0</version>
+				<executions>
+					<execution>
+						<id>report</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+							<jsonFiles>
+								<jsonFile>**/*.json</jsonFile>
+							</jsonFiles>
+							<mergeFeaturesWithRetest>true</mergeFeaturesWithRetest>
+							<mergeFeaturesById>true</mergeFeaturesById>
+							<checkBuildResult>false</checkBuildResult>
+							<skipEmptyJSONFiles>true</skipEmptyJSONFiles>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 		</plugins>

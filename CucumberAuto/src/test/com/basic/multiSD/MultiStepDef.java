@@ -37,8 +37,8 @@ public class MultiStepDef {
 		Thread.sleep(1000);
 	}
 	
-	@And("^User enters user \"([^\"]*)\" surname$")
-	public void user_enters_user_surname(String surName) throws InterruptedException {
+	@And("^User enters user \"([^\"]*)\" surname 1$")
+	public void user_enters_user_surname_1(String surName) throws InterruptedException {
 		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys(surName);
 		Thread.sleep(1000);
 	}

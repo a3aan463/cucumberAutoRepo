@@ -10,7 +10,7 @@ Then close browser
 Scenario: Validate create user multiple fields82
 Given User need to be on Facebook login page
 When User enters user "Ryan" first name 
-And User enters user "Jack" surname
+And User enters user "Jack" surname 1
 Then User checks user "Ryan" first name is present
 Then User mobile field should be blank 1
 Then close browser

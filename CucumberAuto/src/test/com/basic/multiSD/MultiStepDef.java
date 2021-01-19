@@ -15,8 +15,8 @@ public class MultiStepDef {
 	
 	WebDriver driver;
 	
-	@Given("^User need to be on Facebook login page$")
-	public void user_need_to_be_on_Facebook_login_page() {
+	@Given("^User need to be on Facebook login page 1$")
+	public void user_need_to_be_on_Facebook_login_page_1() {
 		System.setProperty("webdriver.chrome.driver", "E:\\CucumberSetup\\chromedriver_win32\\chromedriver.exe");	
 		driver = new ChromeDriver();
 		driver.get("https://www.facebook.com/");

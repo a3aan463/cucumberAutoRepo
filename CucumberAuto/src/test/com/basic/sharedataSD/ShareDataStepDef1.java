@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 
 public class ShareDataStepDef1 {
@@ -16,9 +17,8 @@ public class ShareDataStepDef1 {
 	}
 	
 		
-	@And("^User enters user \"([^\"]*)\" surname$")
+	@When("^User enters user \"([^\"]*)\" surname$")
 	public void user_enters_user_surname(String surName) throws InterruptedException {
-		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys(surName);
 		Thread.sleep(1000);
 	}

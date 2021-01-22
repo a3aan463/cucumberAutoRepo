@@ -2,7 +2,9 @@ package com.basic.sharedataSD;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.en.Given;
@@ -23,7 +25,7 @@ public class ShareDataStepDef {
 	public void user_need_to_be_on_Facebook_login_page() {
 		System.setProperty("webdriver.chrome.driver", "E:\\CucumberSetup\\chromedriver_win32\\chromedriver.exe");	
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.get("https://www.facebook.com/");
 	}
 
@@ -40,6 +42,8 @@ public class ShareDataStepDef {
 		String userNameActual = driver.findElement(By.xpath("//input[@name='firstname']")).getAttribute("value");
 		Assert.assertEquals(userName, userNameActual);
 		Thread.sleep(1000);
+		//WebElement webElement = driver.findElement(By.xpath("//input[@name='firstname']"));//You can use xpath, ID or name whatever you like
+		//webElement.sendKeys(Keys.TAB);
 	}
 	
 	

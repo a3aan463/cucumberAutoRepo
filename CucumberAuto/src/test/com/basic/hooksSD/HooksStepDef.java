@@ -11,6 +11,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pageObjects.FacebookHomePage;
 
 
 public class HooksStepDef {
@@ -32,13 +33,17 @@ public class HooksStepDef {
 	
 	@Given("^User need to be on Facebook login page$")
 	public void user_need_to_be_on_Facebook_login_page() {
-		driver.get("https://www.facebook.com/");
+		System.setProperty("webdriver.chrome.driver", "E:\\CucumberSetup\\chromedriver_win32\\chromedriver.exe");	
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		FacebookHomePage fbHome = new FacebookHomePage(driver);
+		fbHome.navigateTo_HomePage();
+		fbHome.clickOn_Alles_Accepteren();
+		fbHome.clickOn_Register_New_Account();
 	}
 
 	@When("^User enters user \"([^\"]*)\" first name$")
 	public void user_enters_user_first_name(String userName) throws InterruptedException {
-		driver.findElement(By.xpath("//button[text()='Alles accepteren']")).click();
-		driver.findElement(By.xpath("//a[@id='u_0_2']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys(userName);
 	}

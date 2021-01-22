@@ -18,6 +18,7 @@ public class ShareDataStepDef1 {
 		
 	@And("^User enters user \"([^\"]*)\" surname$")
 	public void user_enters_user_surname(String surName) throws InterruptedException {
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys(surName);
 		Thread.sleep(1000);
 	}

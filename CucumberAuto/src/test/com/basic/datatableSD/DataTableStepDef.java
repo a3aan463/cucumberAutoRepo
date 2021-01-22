@@ -25,14 +25,13 @@ public class DataTableStepDef {
 		System.setProperty("webdriver.chrome.driver", "E:\\CucumberSetup\\chromedriver_win32\\chromedriver.exe");	
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		FacebookHomePage fbHome = new FacebookHomePage(driver);
-		fbHome.navigateTo_HomePage();
-		fbHome.clickOn_Alles_Accepteren();
-		fbHome.clickOn_Register_New_Account();
+		driver.get("https://www.facebook.com/");
 	}
 
 	@When("^User enters user \"([^\"]*)\" first name$")
 	public void user_enters_user_first_name(String userName) throws InterruptedException {
+		driver.findElement(By.xpath("//button[text()='Alles accepteren']")).click();
+		driver.findElement(By.xpath("//a[@id='u_0_2']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys(userName);
 	}
